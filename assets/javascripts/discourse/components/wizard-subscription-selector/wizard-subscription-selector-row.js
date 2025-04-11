@@ -12,7 +12,7 @@ export default SelectKitRowComponent.extend({
   click(event) {
     event.preventDefault();
     event.stopPropagation();
-    if (!this.item.disabled) {
+    if (this.item.disabled) {
       this.selectKit.select(this.rowValue, this.item);
     }
     return false;
