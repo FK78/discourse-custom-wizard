@@ -28,10 +28,6 @@ class CustomWizard::AdminApiController < CustomWizard::AdminController
             "An API with that name already exists: '#{current.title || current.name}'"
     end
 
-    unless subscription.includes?(:api, :all)
-      raise Discourse::InvalidParameters, "Your subscription doesn't include API features."
-    end
-
     PluginStoreRow.transaction do
       CustomWizard::Api.set(api_params[:name], title: api_params[:title])
 
@@ -147,9 +143,5 @@ class CustomWizard::AdminApiController < CustomWizard::AdminController
     ].present?
 
     @auth_data ||= auth_data
-  end
-
-  def subscription
-    @subscription ||= CustomWizard::Subscription.new
   end
 end

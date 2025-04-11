@@ -115,116 +115,6 @@ const getWizard = {
     },
   ],
 };
-const getUnsubscribedAdminWizards = {
-  subscribed: false,
-  subscription_type: "none",
-  subscription_attributes: {
-    wizard: {
-      required: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-      permitted: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-      restart_on_revisit: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-    },
-    step: {
-      condition: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-      required_data: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-      permitted_params: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-    },
-    field: {
-      condition: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-      type: {
-        none: [
-          "text",
-          "textarea",
-          "text_only",
-          "date",
-          "time",
-          "date_time",
-          "number",
-          "checkbox",
-          "dropdown",
-          "upload",
-        ],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-      realtime_validations: {
-        none: [],
-        standard: ["*"],
-        business: ["*"],
-        community: ["*"],
-      },
-    },
-    action: {
-      type: {
-        none: ["create_topic", "update_profile", "open_composer", "route_to"],
-        standard: [
-          "create_topic",
-          "update_profile",
-          "open_composer",
-          "route_to",
-          "send_message",
-          "watch_categories",
-          "add_to_group",
-        ],
-        business: ["*"],
-        community: ["*"],
-      },
-    },
-    custom_field: {
-      klass: {
-        none: ["topic", "post"],
-        standard: ["topic", "post"],
-        business: ["*"],
-        community: ["*"],
-      },
-      type: {
-        none: ["string", "boolean", "integer"],
-        standard: ["string", "boolean", "integer"],
-        business: ["*"],
-        community: ["*"],
-      },
-    },
-    api: {
-      all: { none: [], standard: [], business: ["*"], community: ["*"] },
-    },
-  },
-};
 const getCustomFields = {
   custom_fields: [
     {
@@ -941,7 +831,6 @@ const getSuppliersAuthorized = {
 
 export {
   getWizard,
-  getUnsubscribedAdminWizards,
   getCustomFields,
   getWizardTestingLog,
   getWizardSubmissions,

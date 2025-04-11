@@ -15,7 +15,6 @@ import {
   getCustomFields,
   getSuppliers,
   getUniqueWizard,
-  getUnsubscribedAdminWizards,
   getWizard,
 } from "../helpers/admin-wizard";
 
@@ -32,9 +31,6 @@ acceptance("Admin | Custom Wizard Unsubscribed", function (needs) {
     });
     server.get("/admin/wizards/custom-fields", () => {
       return helper.response(getCustomFields);
-    });
-    server.get("/admin/wizards/subscription", () => {
-      return helper.response(getUnsubscribedAdminWizards);
     });
     server.get("/admin/wizards/api", () => {
       return helper.response({ success: "OK" });

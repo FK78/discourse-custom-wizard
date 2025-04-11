@@ -3,7 +3,6 @@ import { test } from "qunit";
 import { acceptance, query } from "discourse/tests/helpers/qunit-helpers";
 import {
   getSuppliers,
-  getUnsubscribedAdminWizards,
   getWizard,
   getWizardTestingLog,
 } from "../helpers/admin-wizard";
@@ -17,9 +16,6 @@ acceptance("Admin | Manager", function (needs) {
   needs.pretender((server, helper) => {
     server.get("/admin/wizards/manager/this_is_testing_wizard", () => {
       return helper.response(getWizardTestingLog);
-    });
-    server.get("/admin/wizards/subscription", () => {
-      return helper.response(getUnsubscribedAdminWizards);
     });
     server.get("/admin/wizards/wizard", () => {
       return helper.response(getWizard);

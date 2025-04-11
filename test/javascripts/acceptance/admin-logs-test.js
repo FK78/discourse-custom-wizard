@@ -8,7 +8,6 @@ import {
 import selectKit from "discourse/tests/helpers/select-kit-helper";
 import {
   getSuppliers,
-  getUnsubscribedAdminWizards,
   getWizard,
   getWizardTestingLog,
 } from "../helpers/admin-wizard";
@@ -27,9 +26,6 @@ acceptance("Admin | Logs", function (needs) {
     });
     server.get("/admin/wizards/logs/this_is_testing_wizard", () => {
       return helper.response(getWizardTestingLog);
-    });
-    server.get("/admin/wizards/subscription", () => {
-      return helper.response(getUnsubscribedAdminWizards);
     });
     server.get("/admin/wizards/wizard", () => {
       return helper.response(getWizard);

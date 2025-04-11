@@ -133,8 +133,4 @@ class CustomWizard::FieldSerializer < ::ApplicationSerializer
   def i18n_key
     @i18n_key ||= "#{object.step.wizard.id}.#{object.step.id}.#{object.id}".underscore
   end
-
-  def subscribed?
-    @subscribed ||= CustomWizard::Subscription.subscribed?
-  end
 end

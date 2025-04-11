@@ -30,7 +30,6 @@ const values = ["present", "true", "false"];
 
 export default Component.extend({
   classNameBindings: [":mapper-selector", "activeType"],
-  subscription: service(),
 
   showText: computed("activeType", function () {
     return this.showInput("text");
@@ -137,33 +136,6 @@ export default Component.extend({
   }),
   valueEnabled: equal("connector", "is"),
 
-  @discourseComputed(
-    "site.groups",
-    "guestGroup",
-    "subscription.subscriptionType"
-  )
-  groups(groups, guestGroup, subscriptionType) {
-    let result = groups;
-    if (!guestGroup) {
-      return result;
-    }
-
-    if (["standard", "business"].includes(subscriptionType)) {
-      let guestIndex;
-      result.forEach((r, index) => {
-        if (r.id === 0) {
-          r.name = I18n.t("admin.wizard.selector.label.users");
-          guestIndex = index;
-        }
-      });
-      result.splice(guestIndex, 0, {
-        id: -1,
-        name: I18n.t("admin.wizard.selector.label.guests"),
-      });
-    }
-
-    return result;
-  },
   categories: alias("site.categories"),
   showComboBox: or(
     "showWizardField",

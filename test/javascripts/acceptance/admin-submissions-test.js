@@ -9,7 +9,6 @@ import selectKit from "discourse/tests/helpers/select-kit-helper";
 import {
   getAnotherWizardSubmission,
   getSuppliers,
-  getUnsubscribedAdminWizards,
   getWizard,
   getWizardSubmissions,
 } from "../helpers/admin-wizard";
@@ -32,9 +31,6 @@ acceptance("Admin | Submissions", function (needs) {
     });
     server.get("/admin/wizards/submissions/another_wizard", () => {
       return helper.response(getAnotherWizardSubmission);
-    });
-    server.get("/admin/wizards/subscription", () => {
-      return helper.response(getUnsubscribedAdminWizards);
     });
     server.get("/admin/wizards/wizard", () => {
       return helper.response(getWizard);

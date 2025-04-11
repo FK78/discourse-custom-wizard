@@ -1,22 +1,4 @@
 {{#if this.showInputs}}
-  <td>
-    {{wizard-subscription-selector
-      value=this.field.klass
-      feature="custom_field"
-      attribute="klass"
-      onChange=(action (mut this.field.klass))
-      options=(hash none="admin.wizard.custom_field.klass.select")
-    }}
-  </td>
-  <td>
-    {{wizard-subscription-selector
-      value=this.field.type
-      feature="custom_field"
-      attribute="type"
-      onChange=(action (mut this.field.type))
-      options=(hash none="admin.wizard.custom_field.type.select")
-    }}
-  </td>
   <td class="input">
     <Input
       @value={{this.field.name}}

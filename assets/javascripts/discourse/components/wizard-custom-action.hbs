@@ -11,17 +11,6 @@
   <div class="setting-label">
     <label>{{i18n "admin.wizard.type"}}</label>
   </div>
-
-  <div class="setting-value">
-    {{wizard-subscription-selector
-      value=this.action.type
-      feature="action"
-      attribute="type"
-      onChange=(action "changeType")
-      wizard=this.wizard
-      options=(hash none="admin.wizard.select_type")
-    }}
-  </div>
 </div>
 
 <div class="setting">

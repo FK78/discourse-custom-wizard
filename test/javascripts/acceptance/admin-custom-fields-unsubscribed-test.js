@@ -10,7 +10,6 @@ import selectKit from "discourse/tests/helpers/select-kit-helper";
 import {
   getCustomFields,
   getSuppliers,
-  getUnsubscribedAdminWizards,
   getWizard,
 } from "../helpers/admin-wizard";
 
@@ -24,9 +23,6 @@ acceptance("Admin | Custom Fields Unsubscribed", function (needs) {
   needs.pretender((server, helper) => {
     server.get("/admin/wizards/wizard", () => {
       return helper.response(getWizard);
-    });
-    server.get("/admin/wizards/subscription", () => {
-      return helper.response(getUnsubscribedAdminWizards);
     });
     server.get("/admin/wizards/custom-fields", () => {
       return helper.response(getCustomFields);

@@ -5,11 +5,9 @@
 # authors: Angus McLeod, Faizaan Gagan, Robert Barrow, Keegan George, Kaitlin Maddever, Marcos Gutierrez
 # url: https://github.com/paviliondev/discourse-custom-wizard
 # contact_emails: development@pavilion.tech
-# subscription_url: https://coop.pavilion.tech
 # meta_topic_id: 73345
 
 gem "liquid", "5.5.0", require: true
-gem "discourse_subscription_client", "0.1.11", require_name: "discourse_subscription_client"
 gem "discourse_plugin_statistics", "0.1.0.pre7", require: true
 register_asset "stylesheets/common/admin.scss"
 register_asset "stylesheets/common/wizard.scss"
@@ -35,7 +33,6 @@ after_initialize do
   require_relative "lib/custom_wizard/engine.rb"
   require_relative "config/routes.rb"
   require_relative "app/controllers/custom_wizard/admin/admin.rb"
-  require_relative "app/controllers/custom_wizard/admin/subscription.rb"
   require_relative "app/controllers/custom_wizard/admin/wizard.rb"
   require_relative "app/controllers/custom_wizard/admin/submissions.rb"
   require_relative "app/controllers/custom_wizard/admin/api.rb"
@@ -65,7 +62,6 @@ after_initialize do
   require_relative "lib/custom_wizard/step_updater.rb"
   require_relative "lib/custom_wizard/step.rb"
   require_relative "lib/custom_wizard/submission.rb"
-  require_relative "lib/custom_wizard/subscription.rb"
   require_relative "lib/custom_wizard/template.rb"
   require_relative "lib/custom_wizard/wizard.rb"
   require_relative "lib/custom_wizard/user_history.rb"
